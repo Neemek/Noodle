@@ -1,0 +1,22 @@
+hello = "world" 
+number = 15
+hex = 0xF1 # with a comment!
+
+[child object]
+    value_a =       "WOW"   
+    wvalue_b =      14
+
+    [child objects child object]
+        info = (0b0100, "This child object is the coolest thing since 2001: a space odyssey")
+
+top level again = true
+
+expanded_number = 1e-24
+
+# maffs = 9 * 10
+
+binary = 0b10010110
+
+array = ()
+
+no value = null
