@@ -1,0 +1,83 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Noodle",
+	"patterns": [
+		{
+			"include": "#identifier"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#comments"
+		}
+	],
+	"repository": {
+		"identifier": {
+			"name": "variable.noodle",
+			"patterns": [
+				{
+					"name": "identifier.assigned.noodle",
+					"match": "\\b[A-Za-z][A-Za-z0-9_ ]+\\b"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.noodle",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.noodle",
+					"match": "\\\\."
+				}
+			]
+		},
+		"numbers": {
+			"name": "constant.numeric.noodle",
+			"patterns": [
+				{
+					"name": "constant.numeric.decimal.noodle",
+					"match": "[0-9]+([eE][+-][0-9]+?)?"
+				},
+				{
+					"name": "constant.numeric.hexadecimal.noodle",
+					"match": "0x[0-9a-fA-F]+"
+				},
+				{
+					"name": "constant.numeric.binary.noodle",
+					"match": "0b[01]+"
+				}
+			]
+		},
+		"keywords": {
+			"name": "constant.language.noodle",
+			"patterns": [
+				{
+					"name": "constant.language.boolean.noodle",
+					"match": "\\b(true|false)\\b"
+				},
+				{
+					"name": "constant.language.null.noodle",
+					"match": "\\bnull\\b"
+				}
+			]
+		},
+		"comments": {
+			"name": "comment.line.number-sign.noodle",
+			"patterns": [
+				{
+					"name": "comment.line.number-sign",
+					"match": "#.*"
+				}
+			]
+		}
+	},
+	"scopeName": "source.nudl"
+}

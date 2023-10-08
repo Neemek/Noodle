@@ -1,0 +1,25 @@
+{
+  "name": "nudl-support",
+  "displayName": "nudl support",
+  "description": "Add support for the noodle data language",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.83.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "noodle",
+      "aliases": ["Noodle", "noodle"],
+      "extensions": [".nudl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "noodle",
+      "scopeName": "source.nudl",
+      "path": "./syntaxes/noodle.tmLanguage.json"
+    }]
+  }
+}
