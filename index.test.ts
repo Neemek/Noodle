@@ -1,4 +1,4 @@
-import { expect, test } from "bun:test";
+import { test, expect } from "@jest/globals"
 import parse, { fromFile } from ".";
 
 test("simple values", () => {
