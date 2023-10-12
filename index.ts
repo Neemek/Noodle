@@ -1,9 +1,14 @@
 import { generate } from "./src/generate/generate";
 import { tokenize } from "./src/lexing/lexer";
 import { ParseOptions, parse as parseSource } from "./src/parse/parse";
-import { readFile } from "fs/promises";
+import type { PathLike, OpenMode } from "fs";
+import { readFile, FileHandle } from "fs/promises";
+import { EventEmitter } from "node:events"
 
-export async function fromFile(path: string | URL, fileOptions?: BlobPropertyBag | undefined, parseOptions?: ParseOptions) {
+export async function fromFile(path: PathLike | FileHandle, fileOptions?: ({
+    encoding?: null | undefined;
+    flag?: OpenMode | undefined;
+} & EventEmitter.Abortable), parseOptions?: ParseOptions) {
     return parse((await readFile(path, fileOptions)).toString(), parseOptions)
 }
 
