@@ -1,6 +1,6 @@
-import { generate } from "./src/generate/generate";
-import { tokenize } from "./src/lexing/lexer";
-import { ParseOptions, parse as parseSource } from "./src/parse/parse";
+import { generate } from "./generate/generate";
+import { tokenize } from "./lexing/lexer";
+import { ParseOptions, parse as parseSource } from "./parse/parse";
 import type { PathLike, OpenMode } from "fs";
 import { readFile, FileHandle } from "fs/promises";
 import { EventEmitter } from "node:events"
