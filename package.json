@@ -1,11 +1,10 @@
 {
-  "name": "datalang",
-  "module": "index.ts",
+  "name": "@neemek/noodle",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "bench": "ts-node ./bench/index.ts",
+    "bench": "node bench/index.js",
     "test": "jest"
   },
   "devDependencies": {

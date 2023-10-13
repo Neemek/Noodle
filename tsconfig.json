@@ -1,9 +1,8 @@
 {
-  "include": ["src/**/*", "tests/index.test.ts"],
-  "exclude": ["src/**/*.test.ts"],
+  "include": ["src/**/*"],
   "compilerOptions": {
     "lib": ["ES2022", "DOM"],
-    "module": "ES2015",
+    "module": "CommonJS",
     "target": "ES2022",
 
     "strict": true,
