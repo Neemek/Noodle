@@ -1,4 +1,4 @@
-import { expect, test } from "bun:test";
+import { expect, test } from "@jest/globals";
 import { generate } from "./generate";
 import parse from "../..";
 
@@ -21,7 +21,7 @@ const data = {
     }
 }
 
-const matchRecreated = (obj: object) => expect(parse(generate(obj))).toMatchObject(obj)
+const matchRecreated = (obj: Record<string, unknown>) => expect(parse(generate(obj))).toMatchObject(obj)
 test("small", () => {
     matchRecreated(data.kvPair)
     matchRecreated(data.emptyObject)
