@@ -1,23 +1,17 @@
 {
-  "include": ["./index.ts", "src/**/*", "index.test.ts"],
+  "include": ["src/**/*", "tests/index.test.ts"],
+  "exclude": ["src/**/*.test.ts"],
   "compilerOptions": {
-    "lib": ["ESNext"],
-    "module": "esnext",
-    "target": "esnext",
-    "moduleResolution": "bundler",
-    "moduleDetection": "force",
-    "allowImportingTsExtensions": true,
-    "noEmit": true,
-    "composite": true,
+    "lib": ["ES2022", "DOM"],
+    "module": "ES2015",
+    "target": "ES2022",
+
     "strict": true,
-    "downlevelIteration": true,
+    "esModuleInterop": true,
     "skipLibCheck": true,
-    "jsx": "preserve",
-    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "allowJs": true,
-    "types": [
-      "bun-types" // add Bun global
-    ]
+
+    "outDir": "lib",
+    "declaration": true
   }
 }
