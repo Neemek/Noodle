@@ -1,6 +1,5 @@
-import { expect, test } from "@jest/globals";
-import { tokenize } from "./lexer";
-import { TokenType } from "./tokens";
+import { tokenize } from "../src/lexing/lexer";
+import { TokenType } from "../src/lexing/tokens";
 
 
 test("small lexing", () => {

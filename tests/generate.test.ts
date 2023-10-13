@@ -1,6 +1,5 @@
-import { expect, test } from "@jest/globals";
-import { generate } from "./generate";
-import parse from "../..";
+import { generate } from "../src/generate/generate";
+import parse from "..";
 
 const data = {
     kvPair: { hello: "world" },
