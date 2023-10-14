@@ -1,5 +1,4 @@
-import { test, expect } from "@jest/globals"
-import parse, { fromFile } from ".";
+import parse, { fromFile } from "../src/index";
 
 test("simple values", () => {
     expect(parse(`hello = "world"`)).toMatchObject({ hello: "world" })
@@ -43,8 +42,8 @@ test("empty", () => {
     expect(parse(`empty array = ()`)).toMatchObject({ "empty array": [] })
 })
 
-test("example files", async () => {
-    expect(await fromFile("./examples/showcase.nudl")).toMatchObject({
+test("example files", () => {
+    expect(fromFile("./examples/showcase.nudl")).resolves.toMatchObject({
         hello: "world",
         number: 15,
         hex: 241,
@@ -62,7 +61,7 @@ test("example files", async () => {
         "no value": null
     })
 
-    expect(await fromFile("./examples/helloworld.nudl")).toMatchObject({
+    expect(fromFile("./examples/helloworld.nudl")).resolves.toMatchObject({
         hello: "world"
     })
 })
