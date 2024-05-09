@@ -1,5 +1,5 @@
 {
-  "name": "@neemek/noodle",
+  "name": "nudl",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "version": "1.0.0",
