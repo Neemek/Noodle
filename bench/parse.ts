@@ -12,8 +12,6 @@ const simpleData = {
 }
 
 group("simple", () => {
-    
-
     bench("1 assign", () => parse(simpleData.one))
     bench("10 assign", () => parse(simpleData.ten))
     bench("50 assign", () => parse(simpleData.fifty))
@@ -35,13 +33,13 @@ group("object", () => {
 })
 
 const examplesData = {
-    helloworld: await Bun.file("./examples/helloworld.nudl").text(),
-    showcase: await Bun.file("./examples/showcase.nudl").text(),
+    helloworld: await Bun.file("../examples/helloworld.nudl").text(),
+    showcase: await Bun.file("../examples/showcase.nudl").text(),
 }
 
 group("examples", () => {
-    bench("hello world example", async () => await fromFile("./examples/helloworld.nudl"))
+    bench("hello world example", async () => await fromFile("../examples/helloworld.nudl"))
     bench("hello world example [preloaded]", () => parse(examplesData.helloworld))
-    bench("showcase (a bit of everything)", async () => await fromFile("./examples/showcase.nudl"))
+    bench("showcase (a bit of everything)", async () => await fromFile("../examples/showcase.nudl"))
     bench("showcase (a bit of everything) [preloaded]", () => parse(examplesData.showcase))
 })
